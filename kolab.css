@@ -1,0 +1,713 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-image: url("bgpurple.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    padding-top: 60px;
+    color: #fff; /* Ensure default text color is white */
+    text-align: justify; /* Centering text globally */
+}
+
+/* Header Section */
+header {
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(50, 10, 95, 0.9);
+    background-color: rgba(50, 10, 95, 0.9);
+    width: 100%;
+    position: relative;
+    top: 0;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+.header-section img {
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-section img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+
+.wow {
+    font-size: 1.5em;
+    color: hsl(36, 100%, 51%);
+    font-weight: bold;
+}
+
+/* General Navigation Styling */
+nav {
+    width: 100%;
+    background: rgba(50, 10, 95, 0.9);
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 12px 20px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 30px;
+    background: linear-gradient(45deg, rgba(114, 32, 177, 0.8), rgba(255, 153, 51, 0.8));
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    border-radius: 30px;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1);
+    color: #ffeb3b;
+    background: linear-gradient(45deg, rgba(255, 102, 204, 0.9), rgba(255, 235, 59, 0.9));
+}
+
+nav ul li a:hover::after {
+    opacity: 1;
+}
+
+nav ul li a span {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(50, 10, 95, 0.9);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 10px 0;
+    z-index: 20;
+    overflow: hidden;
+    animation: dropdown-slide 0.3s ease;
+}
+
+.dropdown-content li {
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+}
+
+.dropdown-content li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content li a {
+    padding: 10px 20px;
+    display: block;
+    color: white;
+    font-size: 1em;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-content li a:hover {
+    background: rgba(255, 153, 51, 0.9);
+    padding-left: 30px;
+}
+
+/* Dropdown Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Slide Animation */
+@keyframes dropdown-slide {
+    from {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* General Navigation Container */
+.pkn-nav {
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* General Navigation Container */
+.pkn-nav {
+    padding: 10px 0; /* Minimal padding for container */
+    max-width: 100%; /* Full width to align items in one row */
+    margin: 20px auto;
+}
+
+/* Navigation List */
+.pkn-nav ul {
+    display: flex;
+    justify-content: center; /* Centers the navigation items */
+    align-items: center; /* Aligns items vertically */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px; /* Equal spacing between items */
+}
+
+/* Navigation Items */
+.pkn-nav ul li {
+    margin: 0; /* Removes any additional margin */
+    display: inline-block; /* Ensures items remain in a row */
+}
+
+.pkn-nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    color: hsl(36, 100%, 63%);
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 0 0 8px #ff4081, 0 0 16px #ff4081, 0 0 24px #ff4081;
+    padding: 5px 10px; /* Minimal padding for clean appearance */
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Icon Size */
+.pkn-nav ul li a span {
+    font-size: 1.2em; /* Slightly smaller icon for balance */
+}
+
+/* Hover Effect */
+.pkn-nav ul li a:hover {
+    color: #FFEB3B;
+    text-shadow: 0 0 20px #ff4081, 0 0 30px #ff4081, 0 0 40px #ff4081;
+    transform: scale(1.1); /* Slight enlargement on hover */
+    letter-spacing: 1px;
+}
+
+/* Tooltip Effect */
+.pkn-nav ul li a::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.pkn-nav ul li a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* Main Content Section */
+.content-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    color: #ffd95c;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #ff935e, 0 0 20px #ff4df3;
+}
+
+.content-section p {
+    font-size: 1.2em;
+    color: #4e0064;
+}
+
+/* Highlight Box Styling */
+.highlight-box {
+    background: linear-gradient(135deg, rgba(255, 183, 94, 0.9), rgba(255, 102, 204, 0.9));
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.highlight-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #FF5722;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 2em;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: none;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #FF4081;
+    transform: scale(1.1);
+}
+
+#scrollToTopBtn:active {
+    transform: scale(1.05);
+}
+
+/* Footer Section */
+footer {
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(50, 10, 95, 0.9);
+    background-color: rgba(50, 10, 95, 0.9);
+    background-size: contain;
+    width: 100%;
+    position: relative;
+    top: 0;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+/* Footer Image */
+.footer-content img {
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-content img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 16px;
+    color: #fff;
+    margin-top: 15px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Text Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+/* Grid Section */
+.grid-section {
+    padding: 30px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background: linear-gradient(120deg, #F9E3AF, #6DB3F2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.grid-photo {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+/* Add margin below the highlight-box section */
+.highlight-box {
+    margin-bottom: 40px; /* Adjust this value for more or less space */
+}
+
+/* Alternatively, add padding to the fun-menu-container */
+.fun-menu-container {
+    padding-top: 20px; /* Adds space between content and menu */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(50, 10, 95, 0.7);
+    background-color: rgba(50, 10, 95, 0.7);
+    width: 100%;
+    position: relative;
+    top: 0;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+/* Numbered Heading */
+.numbered-heading {
+    display: inline-block; /* Ensures the heading stays on one line */
+    font-size: 1.6em; /* Slightly larger font size for prominence */
+    font-weight: 600; /* Bold text for emphasis */
+    color: #ffffff; /* A soft, dark color for the text */
+    padding: 8px 15px; /* Adds space around the text */
+    border-left: 4px solid #ec3798; /* Adds a thin colored border on the left */
+    border-radius: 5px; /* Rounded corners for a softer look */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Optional: Subtle Hover Effect */
+.numbered-heading:hover {
+    background-color: #ff4081; /* Changes background to a vibrant color */
+    color: #fff; /* Changes text color to white */
+    border-left-color: #fff; /* Changes the border color */
+    transform: translateY(-2px); /* Slight upward movement */
+}
+
+/* Glow effect for the .nuhuh class */
+.nuhuh {
+    font-size: 1.5em;
+    color: #ffd445; 
+    text-shadow: 0 0 10px rgb(255, 0, 157), 0 0 20px rgb(255, 199, 140), 0 0 30px rgb(249, 162, 255), 0 0 40px rgb(255, 197, 190);
+    animation: glowPulse 1.5s infinite alternate;
+}
+/* Highlight Box Grid Container */
+.highlight-box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns for the first two boxes */
+    gap: 20px; /* Space between the boxes */
+    margin-top: 20px;
+    justify-items: center; /* Center content horizontally within each grid item */
+    align-items: center; /* Center content vertically */
+}
+
+/* Purple Box (highlight-box1) */
+.highlight-box1 {
+    background: linear-gradient(135deg, rgba(167, 127, 255, 0.9), rgba(94, 23, 209, 0.9));
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: left;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease;
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+/* 2nd Purple Box (highlight-box1) */
+.highlight-box11 {
+    background: linear-gradient(135deg,  rgba(255, 231, 144, 0.9),rgba(255, 127, 193, 0.9), rgba(206, 30, 171, 0.9));
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: left;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease;
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+}
+/* Blue Box (highlight-box2) */
+.highlight-box2 {
+    background: linear-gradient(135deg, rgba(127, 159, 255, 0.9), rgba(70, 100, 211, 0.9));
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: left;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease;
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+/* 2nd Blue Box (highlight-box2) */
+.highlight-box12 {
+    background: linear-gradient(135deg, rgba(241, 127, 243, 0.9), rgba(70, 100, 211, 0.9));
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: left;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease;
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+/* Center Box (highlight-box3) */
+.highlight-box3 {
+    background: linear-gradient(135deg, rgba(254, 226, 161, 0.9), rgba(243, 137, 234, 0.9), rgba(175, 91, 240, 0.9), rgba(172, 36, 251, 0.9));
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: left;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    grid-column: span 2; /* Span across both columns to make it centered */
+    text-align: center;
+}
+
+/* Hover Effects */
+.highlight-box1:hover, .highlight-box2:hover, .highlight-box3:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+gambaryay{
+        display: block;
+        margin: 20px auto;
+        width: 25%;
+        border-radius: 50%;
+        border: 4px solid #FFB6C1; /* Light Pink */
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+header img {
+    transition: transform 0.3s ease-in-out;
+}
+
+header img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+nav ul li a {
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+nav ul li a:hover::after {
+    transform: scale(2);
+}
+.highlight-box:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+body {
+    background-attachment: fixed;
+}
+
+.content-section {
+    background-color: rgba(0, 0, 0, 0.5); /* Add transparency to make text readable */
+}
+.collaboration-title {
+    text-shadow: 0 0 20px #405dff, 0 0 40px #ff4081, 0 0 60px #b821e7;
+    color: #fff;
+    animation: glow 1s ease-in-out infinite alternate;
+    font-size: 2.4em;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 20px #f4c767, 0 0 30px #ff4081, 0 0 40px #ff4081;
+    }
+    100% {
+        text-shadow: 0 0 50px #ff4081, 0 0 70px #ff4081, 0 0 100px #ff4081;
+    }
+}
+footer a {
+    color: #FFEB3B;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 10px #FFEB3B, 0 0 20px #FFEB3B;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 15px #FFEB3B, 0 0 25px #FFEB3B;
+}
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+@media (max-width: 768px) {
+    .highlight-box-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* Enhanced styling for the image */
+.sdgs-image {
+    display: block; /* Ensures image is treated as a block */
+    max-width: 100%; /* Keeps the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    border: 6px solid #ff6f61; /* Adds a thicker border */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s; /* Smooth transitions */
+    margin: 20px auto; /* Centers the image */
+    position: relative; /* Needed for the overlay */
+    overflow: hidden; /* Ensures the gradient overlay stays within borders */
+}
+
+/* Gradient overlay */
+.sdgs-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 111, 97, 0.6), rgba(255, 255, 255, 0));
+    border-radius: 15px; /* Matches image border radius */
+    pointer-events: none; /* Keeps overlay from interfering with interactions */
+}
+
+/* Hover effect */
+.sdgs-image:hover {
+    transform: scale(1.1); /* Zooms in on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    filter: brightness(1.2); /* Increases brightness on hover */
+}
+
+/* Glow effect on hover */
+.sdgs-image:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 5px rgba(255, 111, 97, 0.8); /* Glowing border */
+    pointer-events: none;
+}
+/* Footer Section */
+footer{
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(50, 10, 95, 0.9);
+    background-color: rgba(50, 10, 95, 0.9);
+    width: 100%;
+    position: relative;
+    top: 0;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+.footer-content img {
+    width: 100%;
+    max-width: 1200px;
+    height: 180;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
